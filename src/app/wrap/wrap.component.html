@@ -1,0 +1,975 @@
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+              <h5 class="mb-4 d-inline-block">Standard / Add new Standard</h5>
+                <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                    <ol class="breadcrumb pt-0">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Library</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    </ol>
+                </nav>
+                <div class="separator mb-5"></div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12 mb-4">
+                <div class="mb-4">
+                    <!-- multistep form -->
+                    <!-- progressbar -->
+                    <div class="row multi_step_form">
+                        <div class="col-lg-4 col-md-4 col-sm-12 tab_sections">
+                            <ul id="progressbar" class="card-body card">
+                                <li [ngClass]="{'active' : steps == 1 || steps == 2 || steps == 3 || steps == 4 || steps == 5 || steps == 6 || steps == 7 || steps == 8 || steps == 9 || steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Standard General Information</li>
+                                <li [ngClass]="{'active' : steps == 2 || steps == 3 || steps == 4 || steps == 5 || steps == 6 || steps == 7 || steps == 8 || steps == 9 || steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Principle Clauses</li>
+                                <li [ngClass]="{'active' : steps == 3 || steps == 4 || steps == 5 || steps == 6 || steps == 7 || steps == 8 || steps == 9 || steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Types Of Audit</li>
+                                <li [ngClass]="{'active' : steps == 4 || steps == 5 || steps == 6 || steps == 7 || steps == 8 || steps == 9 || steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Clause Related Questions</li>
+                                <li [ngClass]="{'active' : steps == 5 || steps == 6 || steps == 7 || steps == 8 || steps == 9 || steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Audit Related Questions</li>
+                                <li [ngClass]="{'active' : steps == 6 || steps == 7 || steps == 8 || steps == 9 || steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Pre-Requisites
+                                </li>
+                                <li [ngClass]="{'active' : steps == 7 || steps == 8 || steps == 9 || steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Documents required at Audit</li>
+                                <li [ngClass]="{'active' : steps == 8 || steps == 9 || steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Audit Report Review Checklist</li>
+                                <li [ngClass]="{'active' : steps == 9 || steps == 10 ||steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Opening meeting Checklist</li>
+                                <li [ngClass]="{'active' : steps == 10 || steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Closing meeting Checklist</li>
+                                <li [ngClass]="{'active' : steps == 11}"><span class="glyph-icon simple-icon-check mr-2 icon"></span> Risk Table</li>
+                                <!-- <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> Employee Breakdown</li>
+                                <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> Audit Days</li>
+                                <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> Interview Sampling</li>
+                                <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> Non-Conformities</li>
+                                <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> Audit Execution Process Steps</li>
+                                <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> Certificate Template</li>
+                                <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> Application Review Checklist</li>
+                                <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> ALL Standard</li>
+                                <li><span class="glyph-icon simple-icon-check mr-2 icon"></span> Finish</li> -->
+                            </ul>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12">
+                            <form id="msform" action="#" method="POST" class="card-body card"  (ngSubmit)="submit()">
+
+                                <div class="tab" *ngIf="steps == 1">
+                                    <div class="card-body pt-0" id="standard_info">
+                                        <h5 class="mb-4">Standard General Information</h5>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <label class="form-group has-float-label">
+                                                    <input class="form-control" type="text" name="company_name" required />
+                                                    <span>Enter Name Of Standard</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <p class="mb-2">Type of Audit Cycle : </p>
+                                            <div class="d-flex flex-wrap">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="smeta" name="office_scope" class="custom-control-input">
+                                                    <label class="custom-control-label mr-2" for="smeta">1 year</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="ctpat" name="office_scope" class="custom-control-input">
+                                                    <label class="custom-control-label mr-2" for="ctpat">2 year</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <p class="mb-2">What kind of audit announcements can be done in this standard?</p>
+                                            <div class="d-flex flex-wrap">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="Announced" name="office_scope" class="custom-control-input">
+                                                    <label class="custom-control-label mr-2" for="Announced">Announced</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="Un-announced" name="office_scope" class="custom-control-input">
+                                                    <label class="custom-control-label mr-2" for="Un-announced">Un-announced</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="Semi-Un-announced" name="office_scope" class="custom-control-input">
+                                                    <label class="custom-control-label mr-2" for="Semi-Un-announced">Semi-Un-announced</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <hr /> -->
+                                          <!-- <div class="card_area">
+                                          <div class="row">
+                                              <div class="col-12">
+                                                          <table class="data-table data-table-feature">
+                                                              <thead>
+                                                                  <tr>
+                                                                      <th>Announced</th>
+                                                                      <th>Un-announced</th>
+                                                                      <th>Semi-Un-announced</th>
+                                                                  </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                                  <tr>
+                                                                    <td>Food Testing</td>
+                                                                    <td>People</td>
+                                                                    <td>Main</td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <td>Food Testing</td>
+                                                                    <td>People</td>
+                                                                    <td>Main</td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <td>Food Testing</td>
+                                                                    <td>People</td>
+                                                                    <td>Main</td>
+                                                                  </tr>
+                                                              </tbody>
+                                                          </table>
+                                              </div>
+                                          </div>
+                                          </div> -->
+                                          <!-- <hr /> -->
+
+                                        <!-- <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Announced</th>
+                                                            <th scope="col">Un-announced</th>
+                                                            <th scope="col">Semi-Un-announced</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td contenteditable="true">Service Tax</td>
+                                                            <td>Food Testing</td>
+                                                            <td>People</td>
+                                                            <td>Main</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Food Testing</td>
+                                                            <td>People</td>
+                                                            <td>Main</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="form-group">
+                                            <p class="mb-2">Is this Standard similar to any other standard which was previously defined in the system? IF yes, do you wish to clone its settings into this standard?</p>
+                                            <div class="d-flex flex-wrap">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="yes" name="office_scope" class="custom-control-input">
+                                                    <label class="custom-control-label mr-2" for="yes">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="No" name="office_scope" class="custom-control-input">
+                                                    <label class="custom-control-label mr-2" for="No">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="tab" *ngIf="steps == 2">
+                                  <div class="card-body pt-0" id="principle_clauses">
+                                      <h5 class="mb-4">Principle Clauses</h5>
+                                      <div class="d-flex">
+                                          <input type="text" class="form-control clause_title" id="exampleInputEmail1" placeholder="Enter Clause">
+                                          <button type="button" class="action-button mt-0 add_clause" data-id="hannan">Add Clauses</button>
+                                      </div>
+                                      <div id="fielddiv">
+                                      </div>
+                                      <!-- <div class="d-flex">
+                                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Sub Clauses">
+                                          <button type="button" class="action-button mt-0 font-size-11" (click)="addFormField()">Add Sub Clauses</button>
+                                      </div>
+                                      <div id="fielddiv">
+                                      </div> -->
+                                  </div>
+                              </div>
+                                <div class="tab" *ngIf="steps == 3">
+                                    <div class="card-body pt-0" id="types_of_audit">
+                                        <h5 class="mb-4">Types Of Audit</h5>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <label class="form-group has-float-label">
+                                                    <input class="form-control" type="text" />
+                                                    <span>Enter Audit type name</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <label class="form-group has-float-label select_dropdown">
+                                                    <select required class="form-control select2-single" data-width="100%">
+                                                        <option value="TNOGZ" disabled="disabled">Select Announcement</option>
+                                                        <option value="TPZ" selected>Semi-unannounced</option>
+                                                        <option value="TTZ">Unannounced</option>
+                                                        <option value="TTZ">Announced</option>
+                                                    </select>
+                                                    <span>Select Audit Announcement Type</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                                <button class="btn action-button float-left ml-0 mt-0">Add Audit</button>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                               <table class="data-table data-table-feature">
+                                                              <thead>
+                                                                  <tr>
+                                                                      <th>Audit Type</th>
+                                                                      <th>Audit Announcement</th>
+                                                                  </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                                  <tr>
+                                                                    <td>First Time Audit</td>
+                                                                    <td>Announced</td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <td>Re-certification Audit</td>
+                                                                    <td>Semi-unannounced</td>
+                                                                  </tr>
+                                                              </tbody>
+                                                          </table>
+                                                <!-- <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Audit Type</th>
+                                                            <th scope="col">Audit Announcement</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Full Initial Audit</td>
+                                                            <td>Announced/ Semi-unannounced/Unannounced</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Periodic Audit</td>
+                                                            <td>Announced/ Semi-unannounced/Unannounced</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Desktop Follow up Audit </td>
+                                                            <td>Announced</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Full Follow-up Audit </td>
+                                                            <td>Announced/ Semi-unannounced/Unannounced</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Partial Follow-up Audit </td>
+                                                            <td>Announced/ Semi-unannounced/Unannounced</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab" *ngIf="steps == 4">
+                                  <div class="card-body pt-0" id="audit_related_questions">
+                                      <h5 class="mb-4">Clause Related Questions</h5>
+                                    <div class="d-flex">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" id="question1" name="audit_related_questions" class="custom-control-input">
+                                        <label class="custom-control-label mr-2" for="question1">Compliance with Laws & Workplace Regulations</label>
+                                    </div>
+                                    </div>
+                                    <div class="d-flex">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" id="question2" name="audit_related_questions" class="custom-control-input">
+                                        <label class="custom-control-label mr-2" for="question2">Prohibition of Forced Labor</label>
+                                    </div>
+                                    </div>
+                                    <div class="d-flex">
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" id="question3" name="audit_related_questions" class="custom-control-input">
+                                      <label class="custom-control-label mr-2" for="question3">Prohibition of Child Labor</label>
+                                  </div>
+                                  </div>
+                                  <div class="d-flex">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="question4" name="audit_related_questions" class="custom-control-input">
+                                    <label class="custom-control-label mr-2" for="question4">Compensation & Benefits</label>
+                                </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="question5" name="audit_related_questions" class="custom-control-input">
+                                    <label class="custom-control-label mr-2" for="question5">Hours of Work</label>
+                                </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="question6" name="audit_related_questions" class="custom-control-input">
+                                    <label class="custom-control-label mr-2" for="question6">Prohibition of Discrimination</label>
+                                </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="question7" name="audit_related_questions" class="custom-control-input">
+                                    <label class="custom-control-label mr-2" for="question7">Health & Safety</label>
+                                </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="question8" name="audit_related_questions" class="custom-control-input">
+                                    <label class="custom-control-label mr-2" for="question8">Freedom of Association and Collective Bargaining</label>
+                                </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="question9" name="audit_related_questions" class="custom-control-input">
+                                    <label class="custom-control-label mr-2" for="question9">Environment</label>
+                                </div>
+                                </div>
+                                <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question10" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question10">Customs Compliance</label>
+                              </div>
+                              </div>
+                              <div class="d-flex">
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" id="question11" name="audit_related_questions" class="custom-control-input">
+                                <label class="custom-control-label mr-2" for="question11">Security</label>
+                            </div>
+                            </div>
+
+
+                                  </div>
+                              </div>
+
+                              <div class="tab" *ngIf="steps == 5">
+                                  <div class="card-body pt-0" id="audit_related_questions">
+                                      <h5 class="mb-4">Audit Related Questions</h5>
+                                      <div class="form-group">
+                                          <p class="mb-2">Type of WRAP Audit requested</p>
+                                          <div class="d-flex flex-wrap">
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="first_time_audit:" name="audit_related_questions" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="first_time_audit:">First Time Audit:</label>
+                                              </div>
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="re-certificate" name="audit_related_questions" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="re-certificate">Re-Certification:</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <label class="form-group has-float-label">
+                                                <input class="form-control required" type="number" required />
+                                                <span>WRAP Facility ID</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <label class="form-group has-float-label">
+                                                <input class="form-control required" type="text" required />
+                                                <span>WRAP ID & Password (Optional)</span>
+                                            </label>
+                                        </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group mb-1">
+                                      <label>Last WRAP Audit Date</label>
+                                      <div class="input-group date">
+                                          <input type="text" class="form-control">
+                                          <span class="input-group-text input-group-append input-group-addon">
+                                              <i class="simple-icon-calendar"></i>
+                                          </span>
+                                      </div>
+                                  </div>
+                                  </div>
+
+                                  <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group mb-1">
+                                      <label>Last WRAP certificate Expiry date
+                                        </label>
+                                          <div class="input-group date">
+                                              <input type="text" class="form-control">
+                                              <span class="input-group-text input-group-append input-group-addon">
+                                                  <i class="simple-icon-calendar"></i>
+                                              </span>
+                                          </div>
+                                  </div>
+                                  </div>
+
+                                </div>
+                                <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                  <p class="my-2">Was PCA conducted at your facility?</p>
+                                  <div class="d-flex flex-wrap">
+                                      <div class="custom-control custom-radio">
+                                          <input type="radio" id="pce_yes" name="audit_related_questions" class="custom-control-input">
+                                          <label class="custom-control-label mr-2" for="pce_yes">Yes</label>
+                                      </div>
+                                      <div class="custom-control custom-radio">
+                                          <input type="radio" id="pce_no" name="audit_related_questions" class="custom-control-input">
+                                          <label class="custom-control-label mr-2" for="pce_no">No</label>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                  <p class="my-2">Any open PCA finding?</p>
+                                  <div class="d-flex flex-wrap ml-1">
+                                      <div class="custom-control custom-radio">
+                                          <input type="radio" id="findingpce_yes" name="audit_related_questions" class="custom-control-input">
+                                          <label class="custom-control-label mr-2" for="findingpce_yes">Yes</label>
+                                      </div>
+                                      <div class="custom-control custom-radio">
+                                          <input type="radio" id="findingpce_no" name="audit_related_questions" class="custom-control-input">
+                                          <label class="custom-control-label mr-2" for="findingpce_no">No</label>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                              <div class="form-group">
+                                  <div class="row">
+                                  <div class="col-lg-6 col-md-6 col-sm-12">
+                                  <p class="my-2">Who conducted the PCA?</p>
+                                  </div>
+                                  <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label class="form-group has-float-label">
+                                        <input class="form-control required" type="name" required />
+                                        <span>Enter Name of CB</span>
+                                    </label>
+                                </div>
+
+                              </div>
+                              </div>
+
+
+                                  </div>
+                              </div>
+                              <div class="tab" *ngIf="steps == 6">
+                                  <div class="card-body pt-0" id="pre_requise">
+                                      <h5 class="mb-4">Pre-Requisites</h5>
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                              <label class="form-group has-float-label">
+                                                  <input class="form-control" type="text" name="company_name" required />
+                                                  <span>Enter Pre-requisite</span>
+                                              </label>
+                                          </div>
+
+                                      <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                          <p class="mb-2">Is there a need to upload a document against this pre-requisite?</p>
+                                          <div class="d-flex flex-wrap">
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="pre_requise_yes" name="pre_requise" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="pre_requise_yes">Yes</label>
+                                              </div>
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="pre_requise_no" name="pre_requise" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="pre_requise_no">No</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      </div>
+
+                                      <div class="select-from-library-container mb-1 row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 mb-3 file_input_main">
+                                                    <label class="mb-0 file_uploader"
+                                                        for="upload_prerequires">Upload Document</label>
+                                                    <input type="file" class="d-none file_input_val"
+                                                        name="company_info_certificate" required
+                                                        id="upload_prerequires">
+                                                </div>
+                                    </div>
+
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                              <button class="btn action-button float-left ml-0 mt-0">Add Pre-Requise</button>
+                                          </div>
+
+                                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <table class="data-table data-table-feature">
+                                              <thead>
+                                                  <tr>
+                                                      <th>Pre-Requisite</th>
+                                                      <th>Action against pre-requisite</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                  <tr>
+                                                    <td>SAQ (SEDEX Self-Assessment Questionnaire)</td>
+                                                    <td>Checklist/ Upload Document</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>SAQ (SEDEX Self-Assessment Questionnaire)</td>
+                                                    <td>Checklist/ Upload Document</td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                              <!-- <table class="table table-hover">
+                                                  <thead>
+                                                      <tr>
+                                                          <th scope="col">Pre-Requisite</th>
+                                                          <th scope="col">Action against pre-requisite</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr>
+                                                          <td>SAQ (SEDEX Self-Assessment Questionnaire)</td>
+                                                          <td>Checklist/ Upload Document</td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>SAQ (SEDEX Self-Assessment Questionnaire)</td>
+                                                          <td>Checklist/ Upload Document</td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table> -->
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="tab" *ngIf="steps == 7">
+                                  <div class="card-body pt-0" id="documents_required_at_audit">
+                                      <h5 class="mb-4">Documents required at Audit (To be prepared by Customer)</h5>
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                              <label class="form-group has-float-label">
+                                                  <input class="form-control" type="text" name="company_name" required />
+                                                  <span>Enter Document Name:</span>
+                                              </label>
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                          <p class="mb-2">Is there a need to upload a document against this entry?</p>
+                                          <div class="d-flex flex-wrap">
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="documents_required_at_audit_yes" name="documents_required_at_audit" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="documents_required_at_audit_yes">Yes</label>
+                                              </div>
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="documents_required_at_audit_no" name="documents_required_at_audit" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="documents_required_at_audit_no">No</label>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="select-from-library-container mb-1">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 mb-3 file_input_main">
+                                                    <label class="mb-0 file_uploader"
+                                                        for="Company_review">Upload Document</label>
+                                                    <input type="file" class="d-none file_input_val"
+                                                        name="company_info_certificate" required
+                                                        id="Company_review">
+                                                </div>
+                                    </div>
+
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                              <button class="btn action-button float-left ml-0 mt-0">Add Document</button>
+                                          </div>
+
+                                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <table class="data-table data-table-feature">
+                                              <thead>
+                                                  <tr>
+                                                      <th>Documents required at Audit (To be prepared by Customer)</th>
+                                                      <th>Action against document</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                  <tr>
+                                                    <td>Facility Floor Plans</td>
+                                                    <td>Checklist/ Upload Document</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Facility Floor Plans</td>
+                                                    <td>Checklist/ Upload Document</td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                              <!-- <table class="table table-hover">
+                                                  <thead>
+                                                      <tr>
+                                                          <th scope="col">Documents required at Audit (To be prepared by Customer)</th>
+                                                          <th scope="col">Action against document</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr>
+                                                          <td>Facility Floor Plans</td>
+                                                          <td>Checklist/ Upload Document</td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>Facility Floor Plans</td>
+                                                          <td>Checklist/ Upload Document</td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table> -->
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="tab" *ngIf="steps == 8">
+                                  <div class="card-body pt-0" id="documents_for_company_audit">
+                                      <h5 class="mb-4">Audit Report Review Checklist</h5>
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                              <label class="form-group has-float-label">
+                                                  <input class="form-control" type="text" name="company_name" required />
+                                                  <span>Enter Document Name:</span>
+                                              </label>
+                                          </div>
+
+
+                                      <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                          <p class="mb-2">Is there a need to upload a document against this entry?</p>
+                                          <div class="d-flex flex-wrap">
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="documents_for_company_audit_yes" name="documents_for_company_audit" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="documents_for_company_audit_yes">Yes</label>
+                                              </div>
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="documents_for_company_audit_no" name="documents_for_company_audit" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="documents_for_company_audit_no">No</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </div>
+
+                                      <div class="select-from-library-container mb-1">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 mb-3 file_input_main">
+                                                    <label class="mb-0 file_uploader"
+                                                        for="documents_company">Upload Document</label>
+                                                    <input type="file" class="d-none file_input_val"
+                                                        name="company_info_certificate" required
+                                                        id="documents_company">
+                                                </div>
+                                    </div>
+
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                              <button class="btn action-button float-left ml-0 mt-0">Add Document</button>
+                                          </div>
+
+                                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <p class="mb-2">General Instructions</p>
+                                            <div class="d-flex">
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" id="question1" name="audit_related_questions" class="custom-control-input">
+                                                <label class="custom-control-label mr-2" for="question1">Question One Compliance with Laws & Workplace Regulations</label>
+                                            </div>
+                                            </div>
+                                            <div class="d-flex">
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" id="question2" name="audit_related_questions" class="custom-control-input">
+                                                <label class="custom-control-label mr-2" for="question2">Question Two Prohibition of Forced Labor</label>
+                                            </div>
+                                            </div>
+                                            <p class="my-2">Audit Summary</p>
+                                            <div class="d-flex">
+                                            <div class="custom-control custom-checkbox">
+                                              <input type="checkbox" id="question3" name="audit_related_questions" class="custom-control-input">
+                                              <label class="custom-control-label mr-2" for="question3">Prohibition of Child Labor</label>
+                                          </div>
+                                          </div>
+                                          <div class="d-flex">
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" id="question4" name="audit_related_questions" class="custom-control-input">
+                                            <label class="custom-control-label mr-2" for="question4">Compensation & Benefits</label>
+                                        </div>
+                                        </div>
+                                        <p class="my-2">Audit Summary - CAP Pages</p>
+                                        <div class="d-flex">
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" id="question5" name="audit_related_questions" class="custom-control-input">
+                                            <label class="custom-control-label mr-2" for="question5">Hours of Work</label>
+                                        </div>
+                                        </div>
+                                        <div class="d-flex">
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" id="question6" name="audit_related_questions" class="custom-control-input">
+                                            <label class="custom-control-label mr-2" for="question6">Prohibition of Discrimination</label>
+                                        </div>
+                                        </div>
+                                        <div class="d-flex">
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" id="question7" name="audit_related_questions" class="custom-control-input">
+                                            <label class="custom-control-label mr-2" for="question7">Health & Safety</label>
+                                        </div>
+                                        </div>
+                                        <div class="d-flex">
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" id="question8" name="audit_related_questions" class="custom-control-input">
+                                            <label class="custom-control-label mr-2" for="question8">Freedom of Association and Collective Bargaining</label>
+                                        </div>
+                                        </div>
+                                        <div class="d-flex">
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" id="question9" name="audit_related_questions" class="custom-control-input">
+                                            <label class="custom-control-label mr-2" for="question9">Environment</label>
+                                        </div>
+                                        </div>
+                                        <div class="d-flex">
+                                        <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" id="question10" name="audit_related_questions" class="custom-control-input">
+                                          <label class="custom-control-label mr-2" for="question10">Customs Compliance</label>
+                                      </div>
+                                      </div>
+                                      <div class="d-flex">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" id="question11" name="audit_related_questions" class="custom-control-input">
+                                        <label class="custom-control-label mr-2" for="question11">Security</label>
+                                    </div>
+                                    </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+
+
+                              <div class="tab" *ngIf="steps == 9">
+                                  <div class="card-body pt-0" id="opening_meeting_checklist">
+                                      <h5 class="mb-4">Opening meeting Checklist</h5>
+                                      <div class="row">
+                                          <div class="col-lg-6 col-md-6 col-sm-12">
+                                              <label class="form-group has-float-label">
+                                                  <input class="form-control" type="text" name="company_name" required />
+                                                  <span>Enter Checkpoint:</span>
+                                              </label>
+                                          </div>
+
+                                      <div class="form-group col-lg-6 col-md-6 col-sm-12 mt-20">
+                                          <p class="mb-2">Create Section :</p>
+                                          <div class="d-flex flex-wrap justify-content-center">
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="opening_meeting_checklist_yes" name="opening_meeting_checklist" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="opening_meeting_checklist_yes">Yes</label>
+                                              </div>
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="opening_meeting_checklist_no" name="opening_meeting_checklist" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="opening_meeting_checklist_no">No</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </div>
+
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                              <button class="btn action-button float-left ml-0 mt-0">Add Document</button>
+                                          </div>
+
+                                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <p class="mb-2">General Instructions</p>
+                                  <div class="d-flex">
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" id="question1.1" name="audit_related_questions" class="custom-control-input">
+                                      <label class="custom-control-label mr-2" for="question1.1">Question One Compliance with Laws & Workplace Regulations</label>
+                                  </div>
+                                  </div>
+                                  <div class="d-flex">
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" id="question2.1" name="audit_related_questions" class="custom-control-input">
+                                      <label class="custom-control-label mr-2" for="question2.1">Question Two Prohibition of Forced Labor</label>
+                                  </div>
+                                  </div>
+                                  <p class="my-2">Audit Summary</p>
+                                  <div class="d-flex">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="question3.1" name="audit_related_questions" class="custom-control-input">
+                                    <label class="custom-control-label mr-2" for="question3.1">Prohibition of Child Labor</label>
+                                </div>
+                                </div>
+                                <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question4.1" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question4.1">Compensation & Benefits</label>
+                              </div>
+                              </div>
+                              <p class="my-2">Audit Summary - CAP Pages</p>
+                              <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question5.1" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question5.1">Hours of Work</label>
+                              </div>
+                              </div>
+                              <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question6.1" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question6.1">Prohibition of Discrimination</label>
+                              </div>
+                              </div>
+                              <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question7.1" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question7.1">Health & Safety</label>
+                              </div>
+                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="tab" *ngIf="steps == 10">
+                                  <div class="card-body pt-0" id="closing_meeting_checklist">
+                                      <h5 class="mb-4">Closing meeting Checklist </h5>
+                                      <div class="row">
+                                          <div class="col-lg-6 col-md-6 col-sm-12">
+                                              <label class="form-group has-float-label">
+                                                  <input class="form-control" type="text" name="company_name" required />
+                                                  <span>Enter Checkpoint:</span>
+                                              </label>
+                                          </div>
+
+                                      <div class="form-group col-lg-6 col-md-6 col-sm-12 mt-20">
+                                          <p class="mb-2">Create Section :</p>
+                                          <div class="d-flex flex-wrap justify-content-center">
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="closing_meeting_checklist_yes" name="closing_meeting_checklist" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="closing_meeting_checklist_yes">Yes</label>
+                                              </div>
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" id="closing_meeting_checklist_no" name="closing_meeting_checklist" class="custom-control-input">
+                                                  <label class="custom-control-label mr-2" for="closing_meeting_checklist_no">No</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                              <button class="btn action-button float-left ml-0 mt-0">Add Document</button>
+                                          </div>
+
+                                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <p class="mb-2">General Instructions</p>
+                                  <div class="d-flex">
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" id="question1.2" name="audit_related_questions" class="custom-control-input">
+                                      <label class="custom-control-label mr-2" for="question1.2">Question One Compliance with Laws & Workplace Regulations</label>
+                                  </div>
+                                  </div>
+                                  <div class="d-flex">
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" id="question2.2" name="audit_related_questions" class="custom-control-input">
+                                      <label class="custom-control-label mr-2" for="question2.2">Question Two Prohibition of Forced Labor</label>
+                                  </div>
+                                  </div>
+                                  <p class="my-2">Audit Summary</p>
+                                  <div class="d-flex">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="question3.2" name="audit_related_questions" class="custom-control-input">
+                                    <label class="custom-control-label mr-2" for="question3.2">Prohibition of Child Labor</label>
+                                </div>
+                                </div>
+                                <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question4.2" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question4.2">Compensation & Benefits</label>
+                              </div>
+                              </div>
+                              <p class="my-2">Audit Summary - CAP Pages</p>
+                              <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question5.2" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question5.2">Hours of Work</label>
+                              </div>
+                              </div>
+                              <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question6.2" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question6.2">Prohibition of Discrimination</label>
+                              </div>
+                              </div>
+                              <div class="d-flex">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="question7.2" name="audit_related_questions" class="custom-control-input">
+                                  <label class="custom-control-label mr-2" for="question7.2">Health & Safety</label>
+                              </div>
+                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="tab" *ngIf="steps == 11">
+                                  <div class="card-body pt-0" id="risk_table">
+                                      <h5 class="mb-4">Risk Table</h5>
+                                      <div class="row">
+                                          <div class="col-lg-6 col-md-6 col-sm-12">
+                                              <label class="form-group has-float-label">
+                                                  <input class="form-control" type="text" name="company_name" required />
+                                                  <span>Enter Risk</span>
+                                              </label>
+                                          </div>
+                                          <div class="col-lg-6 col-md-6 col-sm-12">
+                                              <label class="form-group has-float-label select_dropdown">
+                                                  <select required class="form-control select2-single" data-width="100%">
+                                                      <option value="TNOGZ" disabled="disabled">The No Optgroup
+                                                          Zone</option>
+                                                      <option value="TPZ" selected>The Panic Zone</option>
+                                                      <option value="TTZ">The Twilight Zone</option>
+                                                  </select>
+                                                  <span>Select Audit Announcement Type</span>
+                                              </label>
+                                          </div>
+                                      </div>
+
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                                <button class="btn action-button float-left ml-0 mt-0">Add Risk</button>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                              <table class="data-table data-table-feature">
+                                                <thead>
+                                                  <tr>
+                                                    <th>Risk</th>
+                                                    <th>Risk Level</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>lorem</td>
+                                                    <td>lorem</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>lorem</td>
+                                                    <td>lorem</td>
+                                                </tr>
+                                            </tbody>
+                                            </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="add_padding">
+                                    <div>
+                                        <button type="submit" class="next action-button" *ngIf="steps != 11">Next</button>
+                                    <button type="submit" class="submit action-button" *ngIf="steps == 11">Submit</button>
+                  <a href="javascript:void(0)" class="text-center previous action-button" *ngIf="steps != 1" (click)="previous()">Previous</a>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+
+
